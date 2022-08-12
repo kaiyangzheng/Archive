@@ -1,0 +1,16 @@
+            <head>
+                <link rel="stylesheet" href="../static/styles.css">
+            </head>
+            <div class="navbar FourFactors">
+                <a href="{{url_for('home', player=player)}}">Home</a>
+                <a href="/">Player</a>
+            </div>
+            <body class="stats">
+                <h2 style="text-decoration: underline;">{{stat_expansion[stat]}}</h2>
+                <h3>{{stat}}: {{player_row[stat].tolist()[0]}}</h3>
+                <p>Description: {{stat_description[stat]}}</p>
+                <p>Calculation: {{stat_calculation[stat]}}</p>
+            </body>
+            <body class = "plots">
+                <img class="center" src="{{url_for('static', filename=player + ' ' + stat + '.png')}}", alt="{{player}} vs {{comparison_player}}", width=800, height=800>
+            </body>
